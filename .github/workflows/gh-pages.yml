@@ -14,6 +14,7 @@ jobs:
         
       - name: Install dependencies
         run: |
+          pip install markdown==3.3.7
           pip install git+https://github.com/szcf-weiya/mkdocs@patch-0.17.2-py37
           pip install mkdocs-material==2.5.2  
           pip install python-markdown-math
