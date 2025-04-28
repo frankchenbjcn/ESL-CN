@@ -8,8 +8,8 @@ pat = re.compile(r"\*\*([\u4e00-\u9fa5\-a-zA-Z]+)\s?\((\b[a-zA-Z ,\-]+\b)\)\*\*"
 tags = [[] for i in range(26)]
 docsdir = sorted(os.listdir("docs/"))
 tagdict = dict()
-for i in range(18):
-    idx = i + 1
+for idx in range(18):
+    i = idx + 1
     x = docsdir[idx]
     chdir = docsdir[idx]
     for file in glob.glob(f"docs/{chdir}/*.md"):
@@ -53,7 +53,7 @@ for i in range(26):
         # section
         tagpage.write(f"\n## {letters[i]}\n")
         # !!strange behavior of `writelines`: https://stackoverflow.com/questions/13730107/writelines-writes-lines-without-newline-just-fills-the-file
-        tagpage.writelines(tag + '\n' for tag in tags[i])
+        tagpage.writelines(tag + '\n' for tag in sorted(tags[i]))
 
     
 tagpage.close()
