@@ -6,13 +6,11 @@ import glob
 pat = re.compile(r"\*\*([\u4e00-\u9fa5\-a-zA-Z]+)\s?\((\b[a-zA-Z ,\-]+\b)\)\*\*")
 
 tags = [[] for i in range(26)]
-docsdir = os.listdir("docs/")
+docsdir = sorted(os.listdir("docs/"))
 tagdict = dict()
-for i in range(1, 27):
-    # get the idx of the child directory
-    for idx, x in enumerate(docsdir):
-        if f'{i:02}' in x:
-            break
+for i in range(18):
+    idx = i + 1
+    x = docsdir[idx]
     chdir = docsdir[idx]
     for file in glob.glob(f"docs/{chdir}/*.md"):
         print(f"processing {file}...")
