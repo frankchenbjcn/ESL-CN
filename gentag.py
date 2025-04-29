@@ -23,7 +23,7 @@ for idx in range(18):
         print(mat)
         if mat:
             secid = file.split(f'docs/{chdir}/')[1].split('-')[0]
-            url = file.split('docs/')[1].replace('.md', '/index.html')
+            url = file.split('docs/')[1]
             for m in mat:
                 key = f'{m[1]}: {m[0]}'
                 if secid == "Bibliographic":
