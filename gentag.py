@@ -12,7 +12,7 @@ for idx in range(18):
     i = idx + 1
     x = docsdir[idx]
     chdir = docsdir[idx]
-    for file in glob.glob(f"docs/{chdir}/*.md"):
+    for file in sorted(glob.glob(f"docs/{chdir}/*.md")):
         print(f"processing {file}...")
         fl = open(file, "rt")
         contents = fl.read()
@@ -28,6 +28,8 @@ for idx in range(18):
                 key = f'{m[1]}: {m[0]}'
                 if secid == "Bibliographic":
                     val = f'[第 {i} 章文献笔记]({url})'
+                elif secid == "Appendix":
+                    val = f'[第 5 章附录]({url})'
                 else:
                     val = f'[第 {secid} 节]({url})'
                 try:
