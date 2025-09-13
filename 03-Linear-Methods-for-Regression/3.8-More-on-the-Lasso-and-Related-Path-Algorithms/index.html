@@ -42,7 +42,7 @@
 	-->
       <link rel="shortcut icon" href="../../img/favicon.ico">
 
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
+      <meta name="generator" content="mkdocs-0.17.2+weiyapatch1, mkdocs-material-2.6.0">
     
     
       
@@ -59,16 +59,41 @@
       <script src="../../assets/javascripts/modernizr.js"></script>
     
     
+          <!--rm disqus ad refer to https://www.javaer101.com/article/25891160.html-->
+          <script src="../../assets/javascripts/jquery-latest.min.js"></script>
+          <script>
+            (function($){
+              setInterval(() => {
+                  $.each($('iframe'), (arr,x) => {
+                      let src = $(x).attr('src');
+                      if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
+                          $(x).remove();
+                      }
+                      let title = $(x).attr('title');
+                      if (!src && title == "Disqus") {
+                        $(x).remove();
+                      }
+                  });
+              }, 300);
+          })(jQuery);
+          </script>   
+    
+    
       
-        <script src="../../js/iDisqus190507.min.js"></script>
       
     
     
       
-      <!--
-      <style>body,input{font-family:"lucida grande", "lucida sans unicode", lucida, 'Open Sans', helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
-      -->
-      <style>body,input{font-family:Optima, Segoe, “Segoe UI”, Calibri, Arial,source-han-serif-sc,'Source Han Serif SC','Source Han Serif CN','Source Han Serif TC','Source Han Serif TW','Source Han Serif','Songti SC','Microsoft YaHei',sans-serif}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
+      <style>
+      body, input {
+        font-family: Optima, Segoe, “Segoe UI”, Calibri, Arial, 'Source Han Serif SC', 'Source Han Serif', 'Songti SC', 'Microsoft YaHei', sans-serif;
+        }
+      code, kbd, pre {
+        font-family: Consolas, "Courier New", monospace;
+        }
+      blockquote {
+        font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, STKaiti, KaiTi, '楷体', SimKai, "DFKai-SB", NSimSun, serif;}
+      </style>
       <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
       <link rel="stylesheet" href="../../css/icon.css">
       <link rel="stylesheet" href="../../css/mini-awesome/font-awesome.css">
@@ -76,18 +101,18 @@
     
       <link rel="stylesheet" href="../../css/misc.css">
     
-      <link rel="stylesheet" href="../../css/iDisqus190507.min.css">
-    
     
     <script src="../../js/mathjax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3680148472128768",
-    enable_page_level_ads: true
-  });
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KDYJ30F81"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3KDYJ30F81');
+    </script>
   </head>
   
     
@@ -98,24 +123,7 @@
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
+          <svg xmlns="http://www.w3.org/2000/svg" id="github" width="416" height="448" viewBox="0 0 416 448"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360 304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25 2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75 1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75 0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5 46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
@@ -165,35 +173,11 @@
         <!--
         
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
-
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          
         
         -->
+        <!-- <div style="padding-top:0.4rem;padding-bottom:0.4rem;width:15rem;height:4rem;">
+          <iframe src="https://github.com/sponsors/szcf-weiya/button" title="Sponsor szcf-weiya" height="100%" width="100%" style="display:block;margin:auto;border:0;"></iframe>
+        </div> -->
       </div>
       
         <div class="md-flex__cell md-flex__cell--shrink">
@@ -204,7 +188,7 @@
   
 
 
-  <a href="https://github.com/szcf-weiya/ESL-CN" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/szcf-weiya/ESL-CN/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -259,7 +243,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../01-Introduction/2016-07-26-Chapter-1-Introduction/index.html" title="上篇" class="md-tabs__link">
+        <a href="../../01-Introduction/1.1-Introduction/index.html" title="上篇" class="md-tabs__link">
           上篇
         </a>
       
@@ -326,6 +310,19 @@
   
 
       
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tag/index.html" title="索引" class="md-tabs__link">
+          索引
+        </a>
+      
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -354,7 +351,7 @@
   
 
 
-  <a href="https://github.com/szcf-weiya/ESL-CN" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/szcf-weiya/ESL-CN/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -501,7 +498,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../01-Introduction/2016-07-26-Chapter-1-Introduction/index.html" title="1.1 导言" class="md-nav__link">
+    <a href="../../01-Introduction/1.1-Introduction/index.html" title="1.1 导言" class="md-nav__link">
       1.1 导言
     </a>
   </li>
@@ -838,8 +835,8 @@
       
       
         <li class="md-nav__item">
-          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
-            Comments
+          <a href="#__comments" title="💬 讨论区" class="md-nav__link md-nav__link--active">
+            💬 讨论区
           </a>
         </li>
       
@@ -1372,8 +1369,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate/index.html" title="7.4 测试误差率的 optimism" class="md-nav__link">
-      7.4 测试误差率的 optimism
+    <a href="../../07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate/index.html" title="7.4 测试误差率的乐观偏差" class="md-nav__link">
+      7.4 测试误差率的乐观偏差
     </a>
   </li>
 
@@ -1708,8 +1705,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -1792,8 +1789,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html" title="10.1 boosting 方法" class="md-nav__link">
-      10.1 boosting 方法
+    <a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html" title="10.1 Boosting 方法" class="md-nav__link">
+      10.1 Boosting 方法
     </a>
   </li>
 
@@ -1804,8 +1801,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model/index.html" title="10.2 boosting 拟合可加模型" class="md-nav__link">
-      10.2 boosting 拟合可加模型
+    <a href="../../10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model/index.html" title="10.2 Boosting 拟合可加模型" class="md-nav__link">
+      10.2 Boosting 拟合可加模型
     </a>
   </li>
 
@@ -1888,8 +1885,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.9-Boosting-Trees/index.html" title="10.9 boosting 树" class="md-nav__link">
-      10.9 boosting 树
+    <a href="../../10-Boosting-and-Additive-Trees/10.9-Boosting-Trees/index.html" title="10.9 Boosting 树" class="md-nav__link">
+      10.9 Boosting 树
     </a>
   </li>
 
@@ -1900,8 +1897,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting/index.html" title="10.10 Gradient Boosting 的数值优化" class="md-nav__link">
-      10.10 Gradient Boosting 的数值优化
+    <a href="../../10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting/index.html" title="10.10 基于梯度提升的数值优化" class="md-nav__link">
+      10.10 基于梯度提升的数值优化
     </a>
   </li>
 
@@ -2164,8 +2161,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html" title="12.5 FDA" class="md-nav__link">
-      12.5 FDA
+    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html" title="12.5 灵活判别分析" class="md-nav__link">
+      12.5 灵活判别分析
     </a>
   </li>
 
@@ -2176,8 +2173,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis/index.html" title="12.6 PDA" class="md-nav__link">
-      12.6 PDA
+    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis/index.html" title="12.6 惩罚判别分析" class="md-nav__link">
+      12.6 惩罚判别分析
     </a>
   </li>
 
@@ -2416,8 +2413,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces/index.html" title="14.5 主成分，主曲线以及主曲面" class="md-nav__link">
-      14.5 主成分，主曲线以及主曲面
+    <a href="../../14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces/index.html" title="14.5 主成分、主曲线与主曲面" class="md-nav__link">
+      14.5 主成分、主曲线与主曲面
     </a>
   </li>
 
@@ -2929,59 +2926,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
     
     <label class="md-nav__link" for="nav-5-2">
-      习题解答
+      实验重现
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-5-2">
-        习题解答
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../notes/manual/index.html" title="索引" class="md-nav__link">
-      索引
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../notes/Graph/ex-17-7/index.html" title="习题 Ex. 17.7" class="md-nav__link">
-      习题 Ex. 17.7
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
-    
-    <label class="md-nav__link" for="nav-5-3">
-      模拟实验
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-3">
-        模拟实验
+        实验重现
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -3100,18 +3049,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../notes/HighDim/sim18_1/index.html" title="模拟 Fig. 18.1" class="md-nav__link">
-      模拟 Fig. 18.1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../notes/boosting/sim-eq-10-2/index.html" title="模拟 Eq. 10.2" class="md-nav__link">
       模拟 Eq. 10.2
     </a>
@@ -3142,30 +3079,6 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
-    
-    <label class="md-nav__link" for="nav-5-4">
-      算法实现
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-4">
-        算法实现
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
@@ -3190,13 +3103,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
     
-    <label class="md-nav__link" for="nav-5-5">
+    <label class="md-nav__link" for="nav-5-3">
       比较总结
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-5">
+      <label class="md-nav__title" for="nav-5-3">
         比较总结
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -3262,8 +3175,56 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/BS/bs/index.html" title="B 样条在 R, Python, Cpp 中的实现" class="md-nav__link">
+      B 样条在 R, Python, Cpp 中的实现
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      索引
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        索引
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tag/index.html" title="关键词" class="md-nav__link">
+      关键词
+    </a>
   </li>
 
         
@@ -3337,8 +3298,8 @@
       
       
         <li class="md-nav__item">
-          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
-            Comments
+          <a href="#__comments" title="💬 讨论区" class="md-nav__link md-nav__link--active">
+            💬 讨论区
           </a>
         </li>
       
@@ -3354,13 +3315,15 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/szcf-weiya/ESL-CN/edit/master/docs/03-Linear-Methods-for-Regression/3.8-More-on-the-Lasso-and-Related-Path-Algorithms.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="38-lasso">3.8 Lasso 和相关路径算法的补充<a class="headerlink" href="#38-lasso" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
 <th>原文</th>
-<th><a href="../../book/The Elements of Statistical Learning.pdf#page=105">The Elements of Statistical Learning</a></th>
+<th><a href="https://esl.hohoweiya.xyz/book/The%20Elements%20of%20Statistical%20Learning.pdf#page=105">The Elements of Statistical Learning</a></th>
 </tr>
 </thead>
 <tbody>
@@ -3369,12 +3332,12 @@
 <td>szcf-weiya</td>
 </tr>
 <tr>
-<td>时间</td>
+<td>发布</td>
 <td>2016-10-21</td>
 </tr>
 <tr>
 <td>更新</td>
-<td>2019-02-18 16:25:57</td>
+<td>2025-04-29</td>
 </tr>
 <tr>
 <td>状态</td>
@@ -3400,7 +3363,7 @@
 
 <p>考虑 <a href="../../16-Ensemble-Learning/16.2-Boosting-and-Regularization-Paths/index.html">16.2 节</a> 提出的 forward-stagewise boosting 算法 16.1 的线性版本．它通过重复更新与当前残差最相关的变量的系数（乘以一个小量 $\epsilon$）得到系数曲线．算法 3.4 给出了具体的细节．图 3.19（左边）展示了前列腺癌数据中步长 $\epsilon=0.01$ 的过程．如果 $\delta_j=\langle \mathbf x_j,\mathbf r\rangle$（残差在第 $j$ 个预测变量的最小二乘系数），则这恰恰是 <a href="../3.3-Subset-Selection/index.html#forward-stagewis">3.3 节</a> 中介绍的一般 <strong>向前逐渐过程 (FS)</strong>．</p>
 <p><img alt="" src="../../img/03/fig3.19.png" /></p>
-<p>这里我们主要对小的 $\epsilon$ 值感兴趣．令 $\epsilon\rightarrow 0$ 则得到图 3.19 的右图，在这种情形下与图 3.10 的 lasso 路径相同．我们称这个极限过程为 <strong>无穷小的向前逐渐回归 (infinitesimal forward stagewise regression)</strong> 或者 $FS_0$ ．这个过程在非线性、自适应方法中有着很重要的作用，比如 boosting（<a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html">第 10</a> 和 <a href="../../16-Ensemble-Learning/16.1-Introduction/index.html">16 章</a>），并且是增长的向前逐渐回归的，这是最能经得起理论分析的版本．由于它与 boosting 的关系，Buhlmann and Hothorn (2007)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>称这个过程为&rdquo;L2boost&rdquo;</p>
+<p>这里我们主要对小的 $\epsilon$ 值感兴趣．令 $\epsilon\rightarrow 0$ 则得到图 3.19 的右图，在这种情形下与图 3.10 的 lasso 路径相同．我们称这个极限过程为 <strong>无穷小的向前逐渐回归 (infinitesimal forward stagewise regression)</strong> 或者 $FS_0$ ．这个过程在非线性、自适应方法中有着很重要的作用，比如 boosting（<a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html">第 10</a> 和 <a href="../../16-Ensemble-Learning/16.1-Introduction/index.html">16 章</a>），并且是增长的向前逐渐回归的，这是最能经得起理论分析的版本．由于它与 boosting 的关系，Buhlmann and Hothorn (2007)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>称这个过程为&rdquo;L2boost&rdquo;。</p>
 <p>Efron 最初认为 LAR 算法 3.2 是 $FS_0$ 的一个实现，允许每个连结变量 (tied predictor) 以一种平衡的方式更新他们的系数，并且在相关性方面保持连结．然而，他接着意识到 LAR 在这些连结预测变量中的最小二乘拟合可以导致系数向相反的方向移动到它们的相关系数，这在算法 3.4 中是不可能发生的．下面对 LAR 算法的修正实现了 $FS_0$：</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注</p>
@@ -3422,7 +3385,7 @@ $$
 <p>这个修正相当于一个非负的最小二乘拟合, 保持系数的符号与相关系数的符号一致．可以证明它实现了对于最大相关性的连结变量的无限小&rdquo;更新&rdquo;的最优平衡．（Hastie et al.，2007<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>）．类似 lasso，全 $FS_0$ 路径可以通过 LAR 算法非常有效地计算出来．</p>
 <p>作为这些事实的结果，如果 LAR 图象是单调不减或者单调不增，如 3.19 所示，则 LAR，lasso，以及 $FS_0$ 这三种算法给出了相同的图象．如果图象不是单调的但是不穿过 0，则 LAR 和 lasso 是一样的．</p>
 <p>因为 $FS_0$ 与 lasso 不同，很自然地问它是否优化了准则．答案比 lasso 更加的复杂；$FS_0$ 系数曲线是微分方程的一个解．尽管 lasso 在降低系数向量 $\beta$ 的 $L_1$ 范数的单位残差平方和增长方面实现了最优化，但 $FS_0$ 在沿着系数路径的 $L_1$ 弧长的单位增长是最优的．因此它的系数曲线不会经常改变方向．</p>
-<p>$FS_0$ 比 lasso的约束更强，事实上也可以看成是lasso的单调版本；见图16.3生动的例子．$FS_0$ 可能在 $p&gt;&gt;N$ 情形下很有用，它的系数曲线会更加的光滑，因此比 lasso 有更小的方差．更多关于 $FS_0$ 的细节将在 16.2.3 节给出以及 Hastie et al. (2007)<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>．图 3.16 包含了$FS_0$, 它的表现非常类似于 lasso．</p>
+<p>$FS_0$ 比 lasso的约束更强，事实上也可以看成是 lasso 的单调版本；见图 16.3 生动的例子．$FS_0$ 可能在 $p&gt;&gt;N$ 情形下很有用，它的系数曲线会更加的光滑，因此比 lasso 有更小的方差．更多关于 $FS_0$ 的细节将在 16.2.3 节给出以及 Hastie et al. (2007)<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>．图 3.16 包含了$FS_0$, 它的表现非常类似于 lasso．</p>
 <h2 id="_1">分段线性路径算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>最小角回归过程探索了 lasso 解的路径分段线性的本质．这导出了其他正则化问题类似的“路径算法”．假设我们求解</p>
 <p>
@@ -3476,14 +3439,23 @@ L(y, f) = [1-yf]_+\,,
 </p>
 <p>这里 $\Vert\cdot\Vert_\infty$ 为 $L_\infty$ 范数，也就是该向量中绝对值最大的组分．这种形式类似 lasso，用梯度绝对值的最大值替换平方误差损失．注意到当 $t$ 变大，如果 $N &lt; p$，则两个过程都会得到最小二乘解．如果 $p\ge N$，它们都得到最小的 $L_1$ 范数的最小二乘解．然而，对于较小的 $t$，DS 过程的解的路径与 lasso 不同．</p>
 <p>Candes and Tao (2007)<sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>证明了求解 DS 是线性规划问题；为了纪念 George Dantzig（线性规划中单纯形法的发明者），因此称为 Dantzig．他们也证明了该方法的一系列有趣的数学问题，这些性质与重建潜在的稀疏系数向量的能力有关．如 Bickel et al. (2008)<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> 所证明，这些性质对于 lasso 也适用．</p>
-<p>不幸的是 DS 方法的运算性质不够令人满意．这个方法想法上与 lasso 类似，特别是当我们观察 lasso 的平稳条件 (3.58)．和 LAR 算法一样，对于活跃集中的所有变量，lasso 保持着与当前残差相同的内积（以及相关系数），并且将它们的系数向残差平方和的最优下降方向变化．在这个过程中，相同的相关系数单调下降（<a href="https://github.com/szcf-weiya/ESL-CN/issues/100">练习 3.23</a>），并且在任何时刻这个相关性大于非活跃集中的变量．</p>
+<p>不幸的是 DS 方法的运算性质不够令人满意．这个方法想法上与 lasso 类似，特别是当我们观察 lasso 的平稳条件 \eqref{3.58}．</p>
+<div class="admonition note">
+<p class="admonition-title">Recall</p>
+<p>
+<script type="math/tex; mode=display">
+\mathbf x_j^T(\mathbf y-\mathbf X\beta)=\lambda\cdot \sign(\beta_j),\forall j\in {\cal B}\tag{3.58}\label{3.58}
+</script>
+</p>
+</div>
+<p>和 LAR 算法一样，对于活跃集中的所有变量，lasso 保持着与当前残差相同的内积（以及相关系数），并且将它们的系数向残差平方和的最优下降方向变化．在这个过程中，相同的相关系数单调下降（<a href="https://github.com/szcf-weiya/ESL-CN/issues/100">练习 3.23</a>），并且在任何时刻这个相关性大于非活跃集中的变量．</p>
 <div class="admonition info">
 <p class="admonition-title">weiya 注：Ex. 3.23</p>
 <p>已解决，详见 <a href="https://github.com/szcf-weiya/ESL-CN/issues/100">Issue 100: Ex. 3.23</a>，欢迎讨论交流．</p>
 </div>
 <p>而 Dantzig 选择器试图最小化当前残差与所有变量之间的最大内积．因此它可以达到比 lasso 更小的最大值，但是在这一过程中会发生奇怪的现象．如果活跃集的大小为 $m$，则会有 $m$ 个变量与最大相关性绑在一起．然而，这些变量不需要与活跃集重合！因此它可以在模型中包含这样一个变量，其与当前残差的相关性小于不在活跃集中的变量与残差的相关性 (Efron et al., 2007<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup>)．这似乎不合理，而且有时会导致较差的预测误差．Efron et al. (2007)<sup id="fnref2:14"><a class="footnote-ref" href="#fn:14">14</a></sup> 也证明了随着正则化参数 $s$ 的变化，DS 可能得到非常不稳定的系数曲线．</p>
 <h2 id="the-grouped-lasso">The Grouped Lasso<a class="headerlink" href="#the-grouped-lasso" title="Permanent link">&para;</a></h2>
-<p>在一些问题中，预测变量属于预定义的群体中；举个例子，属于同一个生物路径的基因，或者表示类别型数据层次的指示变量（哑变量）．在这种情形中，或许想要对群体中每个成员一起进行收缩或选择．grouped lasso 便是一种实现方式．假设 $p$ 个预测变量被分到 $L$ 个群中，在第 $\ell$ 个群中有 $p_\ell$ 个成员．为了简便，我们采用矩阵 $\mathbf X_\ell$ 来表示对应第 $\ell$ 个群的预测变量，对应的系数向量为$\beta_\ell$．grouped-lasso 最小化下面的凸准则</p>
+<p>在一些问题中，预测变量属于预定义的群体中；举个例子，属于同一个生物路径的基因，或者表示类别型数据层次的指示变量（哑变量）．在这种情形中，或许想要对群体中每个成员一起进行收缩或选择．Grouped lasso 便是一种实现方式．假设 $p$ 个预测变量被分到 $L$ 个群中，在第 $\ell$ 个群中有 $p_\ell$ 个成员．为了简便，我们采用矩阵 $\mathbf X_\ell$ 来表示对应第 $\ell$ 个群的预测变量，对应的系数向量为$\beta_\ell$．grouped-lasso 最小化下面的凸准则</p>
 <p>
 <script type="math/tex; mode=display">
 \underset{\beta\in \IR^p}{\mathrm{min}}\Big(\Vert \mathbf y-\beta_0\boldsymbol 1-\sum\limits_{\ell=1}^L\mathbf X_\ell\beta_\ell\Vert_2^2+\lambda \sum\limits_{\ell=1}^L\sqrt{p_\ell}\Vert \beta_\ell\Vert_2\Big)\tag{3.80}
@@ -3498,7 +3470,7 @@ L(y, f) = [1-yf]_+\,,
 \underset{j\in \cal S^c}{\mathrm{max}}\Vert \mathbf x_j^T\mathbf X_{\cal S}(\mathbf X_{\cal S}^T\mathbf X_{\cal S})^{-1}\Vert_1\le (1-\epsilon)\text{ for some }\epsilon\in (0, 1]\tag{3.81}
 </script>
 </p>
-<p>这里 $\cal S$ 标记真实的潜在模型中非零系数特征的子集，$\mathbf X_{\cal S}$ 是 $\mathbf X$ 中对应的这些特征的列．类似地，$\cal S^c$是真实系数为 0 的特征的集合，$\mathbf X_{\cal S^c}$ 是对应的列．这说明 $\mathbf X_{\cal S^c}$ 的列在 $\mathbf X_{\cal S}$ 上的最小二乘系数不会太大，也就是，“好”的变量 $\cal S$ 与多余的变量 $\cal S^c$ 之间不是高度相关．</p>
+<p>这里 $\cal S$ 标记真实的潜在模型中非零系数特征的子集，$\mathbf X_{\cal S}$ 是 $\mathbf X$ 中对应的这些特征的列．类似地，$\cal S^c$是真实系数为 0 的特征的集合，$\mathbf X_{\cal S^c}$ 是对应的列．这说明 $\mathbf X_{\cal S^c}$ 的列在 $\mathbf X_{\cal S}$ 上的最小二乘系数不会太大，也就是，信号变量 $\cal S$ 与冗余变量 $\cal S^c$ 之间不是高度相关．</p>
 <p>考虑这些系数本身，lasso 收缩导致非零系数的估计偏向 0，并且一般地他们不是一致的．降低这种偏差的一种方式是运行 lasso 来识别非零系数的集合，接着对选出的特征进行无约束线性模型拟合．另外，也可以采用 lasso 来选择非零预测变量，接着再次运用 lasso，但是从第一步开始便只用选择出的变量．这称为 relaxed lasso (Meinshausen, 2007<sup id="fnref2:19"><a class="footnote-ref" href="#fn:19">19</a></sup>)．这个想法是采用交叉验证来估计 lasso 初始的惩罚参数，然后接着对选择出的变量再用一次惩罚参数．因为第二步中的变量与噪声变量之间的竞争变小，所以交叉验证会趋向于选择较小的 $\lambda$，因此它们的系数会比初始估计时收缩得要小．</p>
 <p>另外，也可以修改 lasso 惩罚函数使得更大的系数收缩得不要太剧烈；Fan and Li (2005)<sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup>的 <strong>平稳削减绝对偏差法 (smoothly clipped absolute deviation, SCAD)</strong> 用 $J_a(\beta,\lambda)$ 替换 $\lambda\vert\beta \vert$，其中对于 $a\ge 2$</p>
 <p>
@@ -3509,8 +3481,16 @@ L(y, f) = [1-yf]_+\,,
 <p>方括号中的第二项降低了 lasso 对于较大 $\beta$ 的收缩程度，在极限状态时，当 $a\rightarrow \infty$，没有收缩．图 3.20 显示了 SCAD 惩罚，以及 lasso 和 $\beta^{1-\nu} $．然而这个准则不是凸的，这是一个缺陷，因为它会使得计算变得很困难．adaptive lasso (Zou, 2006)<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup>采用形如 $\sum_{j=1}^pw_j\vert\beta_j\vert$ 的加权惩罚，其中 $w_j=1/\vert\hat\beta_j\vert^\nu$，$\hat\beta_j$ 是一般最小二乘估计并且 $\nu &gt;0$．这是对 <a href="../3.4-Shrinkage-Methods/index.html#lasso_1">3.4.3 节</a>中讨论的 $\vert\beta\vert^q$ 惩罚的实际近似（这里 $q=1-\nu$）．adaptive lasso 在保证 lasso 吸引人的凸性基础上还得到了参数的一致估计．</p>
 <p><img alt="" src="../../img/03/fig3.20.png" /></p>
 <h2 id="pathwise-coordinate-optimization">Pathwise Coordinate Optimization<a class="headerlink" href="#pathwise-coordinate-optimization" title="Permanent link">&para;</a></h2>
-<p>一种替代计算 lasso 的 LARS 算法是 <strong>简单坐标下降 (simple coordinate descent)</strong>．这个想法由 Fu (1998)<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup> 和 Daubechies et al. (2004)<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup> 提出，后来被 Friedman et al. (2007)<sup id="fnref:29"><a class="footnote-ref" href="#fn:29">29</a></sup>, Wu and Lange (2008)<sup id="fnref:30"><a class="footnote-ref" href="#fn:30">30</a></sup> 和其他人研究及推广．想法是固定 Lagrangian 形式 (3.52) 中的惩罚参数 $\lambda$，在控制其它参数固定不变时，相继地优化每一个参数．</p>
-<p>假设预测变量都经过标准化得到 0 均值和单位范数．用 $\tilde\beta_k(\lambda)$ 表示惩罚参数为 $\lambda$ 时对 $\beta_k$ 的当前估计．我们可以分离出 (3.52) 的 $\beta_j$,</p>
+<p>一种替代计算 lasso 的 LARS 算法是 <strong>简单坐标下降 (simple coordinate descent)</strong>．这个想法由 Fu (1998)<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup> 和 Daubechies et al. (2004)<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup> 提出，后来被 Friedman et al. (2007)<sup id="fnref:29"><a class="footnote-ref" href="#fn:29">29</a></sup>, Wu and Lange (2008)<sup id="fnref:30"><a class="footnote-ref" href="#fn:30">30</a></sup> 和其他人研究及推广．想法是固定 Lagrangian 形式 \eqref{3.52} 中的惩罚参数 $\lambda$，在控制其它参数固定不变时，相继地优化每一个参数．</p>
+<div class="admonition note">
+<p class="admonition-title">Recall</p>
+<p>
+<script type="math/tex; mode=display">
+\hat{\beta}^{lasso}=\underset{\beta}{\arg\min}\Big\{\sum\limits_{i=1}^N(y_i-\beta_0-\sum\limits_{j=1}^px_{ij}\beta_j)^2+\lambda\sum\limits_{j=1}^p\vert\beta_j\vert\Big\}\tag{3.52}\label{3.52}
+</script>
+</p>
+</div>
+<p>假设预测变量都经过标准化得到 0 均值和单位范数．用 $\tilde\beta_k(\lambda)$ 表示惩罚参数为 $\lambda$ 时对 $\beta_k$ 的当前估计．我们可以分离出 \eqref{3.52} 的 $\beta_j$,</p>
 <p>
 <script type="math/tex; mode=display">
 R(\tilde\beta(\lambda),\beta_j)=\frac{1}{2}\sum\limits_{i=1}^N(y_i-\sum\limits_{k\neq j}x_{ik}\tilde \beta_k(\lambda)-x_{ij}\beta_j)^2+\lambda \sum\limits_{k\neq j}\vert \tilde \beta_k(\lambda)\vert+\lambda \vert \beta_j\vert
@@ -3519,11 +3499,11 @@ R(\tilde\beta(\lambda),\beta_j)=\frac{1}{2}\sum\limits_{i=1}^N(y_i-\sum\limits_{
 <p>其中我们压缩了截距并且为了方便引出因子 $\frac 12$．这个可以看成是响应变量为部分残差 $y_i-\tilde y_i^{(j)}=y_i-\sum_{k\neq j}x_{ik}\tilde \beta_k(\lambda)$．这有显式解，得到下面的更新</p>
 <p>
 <script type="math/tex; mode=display">
-\tilde \beta_j(\lambda)\leftarrow S(\sum\limits_{i=1}^Nx_{ij}(y_i-\tilde y_i^{(j)}),\lambda)\tag{3.84}\label{eq:3.84}
+\tilde \beta_j(\lambda)\leftarrow S(\sum_{i=1}^Nx_{ij}(y_i-\tilde y_i^{(j)}),\lambda)\tag{3.84}\label{3.84}
 </script>
 </p>
-<p>这里 $S(t,\lambda)=\sign(t)(\vert t\vert-\lambda)_+$ 是表 3.4 中的软阈值算子．$S(\cdot)$ 中的第一个变量是部分残差在标准化变量 $x_{ij}$ 上的简单最小二乘系数．\eqref{eq:3.84} 的重复迭代——轮流考虑每个变量直到收敛——得到 lasso 估计 $\hat\beta(\lambda)$．</p>
-<p>我们也可以采用这种简单的算法来有效地计算在 $\lambda$ 的每个网格结点上 lasso 的解．我们从使得 $\hat\beta(\lambda_{max})=0$ 的最小 $\lambda_{\max}$ 开始，每次降低一点点来循环考虑每个变量直到收敛．采用前一个解作为 $\lambda$ 新值的“warm start”，$\lambda$ 再一次降低，并且重复该过程．这个可能比 LARS 算法快，特别是在大型问题中．它速度的关键在于 \eqref{3.84} 中的量随着 $j$ 变化可以快速更新，并且通常更新后有 $\tilde \beta_j=0$．另一方面，它在 $\lambda$ 的网格处求解，而不是整个解的路径．同样类型的算法可以应用到 elastic net，grouped lasso 以及许多其它惩罚为个体参数的函数之和的模型（Friedman et al., 2010<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup>）．通过一些修改，这也可以应用到 fused lasso（<a href="../../18-High-Dimensional-Problems/18.4-Linear-Classifiers-with-L1-Regularization/index.html">18.4.2 节</a>）；细节在 Friedman et al. (2007)<sup id="fnref2:29"><a class="footnote-ref" href="#fn:29">29</a></sup>中给出．</p>
+<p>这里 $S(t,\lambda)=\sign(t)(\vert t\vert-\lambda)_+$ 是表 3.4 中的软阈值算子．$S(\cdot)$ 中的第一个变量是部分残差在标准化变量 $x_{ij}$ 上的简单最小二乘系数．\eqref{3.84} 的重复迭代——轮流考虑每个变量直到收敛——得到 lasso 估计 $\hat\beta(\lambda)$．</p>
+<p>我们也可以采用这种简单的算法来有效地计算在 $\lambda$ 的每个网格结点上 lasso 的解．我们从使得 $\hat\beta(\lambda_{\max})=0$ 的最小 $\lambda_{\max}$ 开始，每次降低一点点来循环考虑每个变量直到收敛．采用前一个解作为 $\lambda$ 新值的“warm start”，$\lambda$ 再一次降低，并且重复该过程．这个可能比 LARS 算法快，特别是在大型问题中．它速度的关键在于 \eqref{3.84} 中的量随着 $j$ 变化可以快速更新，并且通常更新后有 $\tilde \beta_j=0$．另一方面，它在 $\lambda$ 的网格处求解，而不是整个解的路径．同样类型的算法可以应用到 elastic net，grouped lasso 以及许多其它惩罚为个体参数的函数之和的模型（Friedman et al., 2010<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup>）．通过一些修改，这也可以应用到 fused lasso（<a href="../../18-High-Dimensional-Problems/18.4-Linear-Classifiers-with-L1-Regularization/index.html">18.4.2 节</a>）；细节在 Friedman et al. (2007)<sup id="fnref2:29"><a class="footnote-ref" href="#fn:29">29</a></sup>中给出．</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -3628,18 +3608,44 @@ R(\tilde\beta(\lambda),\beta_j)=\frac{1}{2}\sum\limits_{i=1}^N(y_i-\sum\limits_{
               
               
                 
-                  <h2 id="__comments">Comments</h2>
-                  <div id="comment"></div>
-<script>
-    var disq = new iDisqus('comment', {
-    forum: 'esl-hohoweiya-xyz',
-    api: 'https://api.hohoweiya.xyz/disqus-190507',
-    site: 'https://esl.hohoweiya.xyz',
-    mode: 1,
-    timeout: 3000,
-    init: true
-});
+                  <h2 id="__comments">💬 讨论区</h2>
+                  <script src="https://giscus.app/client.js"
+        data-repo="szcf-weiya/ESL-CN"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk2OTYyNTgzOA=="
+        data-category="评论区"
+        data-category-id="DIC_kwDOBCZn7s4ChHU6"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
 </script>
+
+
+<div id="disqus_thread"></div>
+<script>
+  if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+    var disqus_config = function () {
+      this.page.url = "https://esl.hohoweiya.xyz/03-Linear-Methods-for-Regression/3.8-More-on-the-Lasso-and-Related-Path-Algorithms/index.html";
+      this.page.identifier =
+        "/03-Linear-Methods-for-Regression/3.8-More-on-the-Lasso-and-Related-Path-Algorithms/index.html";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//esl-hohoweiya-xyz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  } else {
+    console.log("Disqus is disabled on localhost.");
+  }
+</script>
+
+
                 
               
             </article>
@@ -3690,7 +3696,7 @@ R(\tilde\beta(\lambda),\beta_j)=\frac{1}{2}\sum\limits_{i=1}^N(y_i-\sum\limits_{
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016-2019 weiya
+            Copyright &copy; 2016-2025 weiya
           </div>
         
         <!--
@@ -3700,7 +3706,7 @@ R(\tilde\beta(\lambda),\beta_j)=\frac{1}{2}\sum\limits_{i=1}^N(y_i-\sum\limits_{
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2019-11-18 15:50:22
+        Last Build Date UTC : 2025-09-13 07:56:23
       </div>
       
         
@@ -3713,7 +3719,7 @@ R(\tilde\beta(\lambda),\beta_j)=\frac{1}{2}\sum\limits_{i=1}^N(y_i-\sum\limits_{
     
       <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://stats.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
     
       <a href="https://www.linkedin.com/in/szcfweiya/" class="md-footer-social__link fa fa-linkedin"></a>
     
@@ -3733,18 +3739,57 @@ R(\tilde\beta(\lambda),\beta_j)=\frac{1}{2}\sum\limits_{i=1}^N(y_i-\sum\limits_{
     <!--
       
     -->
-	    <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+	    <script>app.initialize({version:"0.17.2+weiyapatch1",url:{base:"../.."}})</script>
 	          <!---->
 
     <script>var base_url = '../..';</script>
     <!--
       
     -->
+    <script src="../../js/baiduzhanzhang.js"></script>
     
     
       
         <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-85046550-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
+    <!--adjust disqus recommendation width (possibly occupied by ads)-->
+    <script>
+// 确保在 DOM 完全加载后执行
+document.addEventListener('DOMContentLoaded', function() {
+    // 定义修复宽度的函数
+    function fixDisqusWidth() {
+        const iframe = document.querySelector('#disqus_recommendations iframe');
+        if (iframe) {
+            iframe.style.cssText += 'width: 100% !important; max-width: 100% !important;';
+        }
+    }
+
+    // 初次尝试修复
+    fixDisqusWidth();
+
+    // 监听 Disqus 容器的动态加载
+    const observer = new MutationObserver(function(mutations) {
+        fixDisqusWidth();
+    });
+
+    // 获取 Disqus 容器
+    const targetNode = document.getElementById('disqus_recommendations');
+    if (targetNode) {
+        // 如果容器已存在，直接监听
+        observer.observe(targetNode, { childList: true, subtree: true });
+    } else {
+        // 如果容器未加载，监听整个文档直到其出现
+        const docObserver = new MutationObserver(function(mutations) {
+            const lateTarget = document.getElementById('disqus_recommendations');
+            if (lateTarget) {
+                observer.observe(lateTarget, { childList: true, subtree: true });
+                docObserver.disconnect();
+            }
+        });
+        docObserver.observe(document.body, { childList: true, subtree: true });
+    }
+});
+    </script>
   </body>
 </html>

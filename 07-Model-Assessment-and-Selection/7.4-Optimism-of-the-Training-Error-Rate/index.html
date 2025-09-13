@@ -42,11 +42,11 @@
 	-->
       <link rel="shortcut icon" href="../../img/favicon.ico">
 
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
+      <meta name="generator" content="mkdocs-0.17.2+weiyapatch1, mkdocs-material-2.6.0">
     
     
       
-        <title>7.4 测试误差率的 optimism - ESL CN</title>
+        <title>7.4 测试误差率的乐观偏差 - ESL CN</title>
       
     
     
@@ -59,16 +59,41 @@
       <script src="../../assets/javascripts/modernizr.js"></script>
     
     
+          <!--rm disqus ad refer to https://www.javaer101.com/article/25891160.html-->
+          <script src="../../assets/javascripts/jquery-latest.min.js"></script>
+          <script>
+            (function($){
+              setInterval(() => {
+                  $.each($('iframe'), (arr,x) => {
+                      let src = $(x).attr('src');
+                      if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
+                          $(x).remove();
+                      }
+                      let title = $(x).attr('title');
+                      if (!src && title == "Disqus") {
+                        $(x).remove();
+                      }
+                  });
+              }, 300);
+          })(jQuery);
+          </script>   
+    
+    
       
-        <script src="../../js/iDisqus190507.min.js"></script>
       
     
     
       
-      <!--
-      <style>body,input{font-family:"lucida grande", "lucida sans unicode", lucida, 'Open Sans', helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
-      -->
-      <style>body,input{font-family:Optima, Segoe, “Segoe UI”, Calibri, Arial,source-han-serif-sc,'Source Han Serif SC','Source Han Serif CN','Source Han Serif TC','Source Han Serif TW','Source Han Serif','Songti SC','Microsoft YaHei',sans-serif}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
+      <style>
+      body, input {
+        font-family: Optima, Segoe, “Segoe UI”, Calibri, Arial, 'Source Han Serif SC', 'Source Han Serif', 'Songti SC', 'Microsoft YaHei', sans-serif;
+        }
+      code, kbd, pre {
+        font-family: Consolas, "Courier New", monospace;
+        }
+      blockquote {
+        font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, STKaiti, KaiTi, '楷体', SimKai, "DFKai-SB", NSimSun, serif;}
+      </style>
       <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
       <link rel="stylesheet" href="../../css/icon.css">
       <link rel="stylesheet" href="../../css/mini-awesome/font-awesome.css">
@@ -76,18 +101,18 @@
     
       <link rel="stylesheet" href="../../css/misc.css">
     
-      <link rel="stylesheet" href="../../css/iDisqus190507.min.css">
-    
     
     <script src="../../js/mathjax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3680148472128768",
-    enable_page_level_ads: true
-  });
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KDYJ30F81"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3KDYJ30F81');
+    </script>
   </head>
   
     
@@ -98,24 +123,7 @@
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
+          <svg xmlns="http://www.w3.org/2000/svg" id="github" width="416" height="448" viewBox="0 0 416 448"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360 304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25 2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75 1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75 0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5 46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
@@ -129,7 +137,7 @@
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
     
-      <a href="#74-optimism" tabindex="1" class="md-skip">
+      <a href="#74" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -155,7 +163,7 @@
                 ESL CN
               </span>
               <span class="md-header-nav__topic">
-                7.4 测试误差率的 optimism
+                7.4 测试误差率的乐观偏差
               </span>
             
           
@@ -165,35 +173,11 @@
         <!--
         
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
-
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          
         
         -->
+        <!-- <div style="padding-top:0.4rem;padding-bottom:0.4rem;width:15rem;height:4rem;">
+          <iframe src="https://github.com/sponsors/szcf-weiya/button" title="Sponsor szcf-weiya" height="100%" width="100%" style="display:block;margin:auto;border:0;"></iframe>
+        </div> -->
       </div>
       
         <div class="md-flex__cell md-flex__cell--shrink">
@@ -204,7 +188,7 @@
   
 
 
-  <a href="https://github.com/szcf-weiya/ESL-CN" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/szcf-weiya/ESL-CN/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -259,7 +243,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../01-Introduction/2016-07-26-Chapter-1-Introduction/index.html" title="上篇" class="md-tabs__link">
+        <a href="../../01-Introduction/1.1-Introduction/index.html" title="上篇" class="md-tabs__link">
           上篇
         </a>
       
@@ -326,6 +310,19 @@
   
 
       
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tag/index.html" title="索引" class="md-tabs__link">
+          索引
+        </a>
+      
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -354,7 +351,7 @@
   
 
 
-  <a href="https://github.com/szcf-weiya/ESL-CN" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/szcf-weiya/ESL-CN/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -499,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../01-Introduction/2016-07-26-Chapter-1-Introduction/index.html" title="1.1 导言" class="md-nav__link">
+    <a href="../../01-Introduction/1.1-Introduction/index.html" title="1.1 导言" class="md-nav__link">
       1.1 导言
     </a>
   </li>
@@ -1303,8 +1300,8 @@
       
     
     
-    <a href="index.html" title="7.4 测试误差率的 optimism" class="md-nav__link md-nav__link--active">
-      7.4 测试误差率的 optimism
+    <a href="index.html" title="7.4 测试误差率的乐观偏差" class="md-nav__link md-nav__link--active">
+      7.4 测试误差率的乐观偏差
     </a>
     
   </li>
@@ -1640,8 +1637,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -1724,8 +1721,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html" title="10.1 boosting 方法" class="md-nav__link">
-      10.1 boosting 方法
+    <a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html" title="10.1 Boosting 方法" class="md-nav__link">
+      10.1 Boosting 方法
     </a>
   </li>
 
@@ -1736,8 +1733,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model/index.html" title="10.2 boosting 拟合可加模型" class="md-nav__link">
-      10.2 boosting 拟合可加模型
+    <a href="../../10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model/index.html" title="10.2 Boosting 拟合可加模型" class="md-nav__link">
+      10.2 Boosting 拟合可加模型
     </a>
   </li>
 
@@ -1820,8 +1817,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.9-Boosting-Trees/index.html" title="10.9 boosting 树" class="md-nav__link">
-      10.9 boosting 树
+    <a href="../../10-Boosting-and-Additive-Trees/10.9-Boosting-Trees/index.html" title="10.9 Boosting 树" class="md-nav__link">
+      10.9 Boosting 树
     </a>
   </li>
 
@@ -1832,8 +1829,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting/index.html" title="10.10 Gradient Boosting 的数值优化" class="md-nav__link">
-      10.10 Gradient Boosting 的数值优化
+    <a href="../../10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting/index.html" title="10.10 基于梯度提升的数值优化" class="md-nav__link">
+      10.10 基于梯度提升的数值优化
     </a>
   </li>
 
@@ -2096,8 +2093,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html" title="12.5 FDA" class="md-nav__link">
-      12.5 FDA
+    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html" title="12.5 灵活判别分析" class="md-nav__link">
+      12.5 灵活判别分析
     </a>
   </li>
 
@@ -2108,8 +2105,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis/index.html" title="12.6 PDA" class="md-nav__link">
-      12.6 PDA
+    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis/index.html" title="12.6 惩罚判别分析" class="md-nav__link">
+      12.6 惩罚判别分析
     </a>
   </li>
 
@@ -2348,8 +2345,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces/index.html" title="14.5 主成分，主曲线以及主曲面" class="md-nav__link">
-      14.5 主成分，主曲线以及主曲面
+    <a href="../../14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces/index.html" title="14.5 主成分、主曲线与主曲面" class="md-nav__link">
+      14.5 主成分、主曲线与主曲面
     </a>
   </li>
 
@@ -2861,59 +2858,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
     
     <label class="md-nav__link" for="nav-5-2">
-      习题解答
+      实验重现
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-5-2">
-        习题解答
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../notes/manual/index.html" title="索引" class="md-nav__link">
-      索引
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../notes/Graph/ex-17-7/index.html" title="习题 Ex. 17.7" class="md-nav__link">
-      习题 Ex. 17.7
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
-    
-    <label class="md-nav__link" for="nav-5-3">
-      模拟实验
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-3">
-        模拟实验
+        实验重现
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -3032,18 +2981,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../notes/HighDim/sim18_1/index.html" title="模拟 Fig. 18.1" class="md-nav__link">
-      模拟 Fig. 18.1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../notes/boosting/sim-eq-10-2/index.html" title="模拟 Eq. 10.2" class="md-nav__link">
       模拟 Eq. 10.2
     </a>
@@ -3074,30 +3011,6 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
-    
-    <label class="md-nav__link" for="nav-5-4">
-      算法实现
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-4">
-        算法实现
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
@@ -3122,13 +3035,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
     
-    <label class="md-nav__link" for="nav-5-5">
+    <label class="md-nav__link" for="nav-5-3">
       比较总结
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-5">
+      <label class="md-nav__title" for="nav-5-3">
         比较总结
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -3194,8 +3107,56 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/BS/bs/index.html" title="B 样条在 R, Python, Cpp 中的实现" class="md-nav__link">
+      B 样条在 R, Python, Cpp 中的实现
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      索引
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        索引
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tag/index.html" title="关键词" class="md-nav__link">
+      关键词
+    </a>
   </li>
 
         
@@ -3231,13 +3192,15 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/szcf-weiya/ESL-CN/edit/master/docs/07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                <h1 id="74-optimism">7.4 训练误差率的optimism<a class="headerlink" href="#74-optimism" title="Permanent link">&para;</a></h1>
+                
+                <h1 id="74">7.4 训练误差率的乐观偏差<a class="headerlink" href="#74" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
 <th>原文</th>
-<th><a href="../../book/The Elements of Statistical Learning.pdf#page=247">The Elements of Statistical Learning</a></th>
+<th><a href="https://esl.hohoweiya.xyz/book/The%20Elements%20of%20Statistical%20Learning.pdf#page=247">The Elements of Statistical Learning</a></th>
 </tr>
 </thead>
 <tbody>
@@ -3246,12 +3209,12 @@
 <td>szcf-weiya</td>
 </tr>
 <tr>
-<td>时间</td>
-<td>2017-02-18:2017-02-18</td>
+<td>发布</td>
+<td>2016-09-30</td>
 </tr>
 <tr>
 <td>更新</td>
-<td>2019-07-27 12:07:49</td>
+<td>2025-04-29</td>
 </tr>
 <tr>
 <td>状态</td>
@@ -3259,13 +3222,13 @@
 </tr>
 </tbody>
 </table>
-<p>讨论误差率的估计可能令人困惑，因为我们必须弄清楚哪些量是固定的哪些量是随机的．在我们继续之前，我们需要一些定义，详细阐述第 <a href="../7.2-Bias-Variance-and-Model-Complexity/index.html">7.2 节</a>的内容．给出训练集 $\cal{T}=\{(x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)\}$，模型 $\hat f$ 的泛化误差为</p>
+<p>讨论误差率的估计可能令人困惑，因为我们必须弄清楚哪些量是固定的哪些量是随机的．在我们继续之前，我们需要一些定义，详细阐述第 <a href="../7.2-Bias-Variance-and-Model-Complexity/index.html">7.2 节</a>的内容．给出训练集 $\cT=\{(x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)\}$，模型 $\hat f$ 的 <strong>泛化误差 (generalization error)</strong> 为</p>
 <p>
 <script type="math/tex; mode=display">
 \Err_{\cal T} = \mathrm E_{X^0,Y^0}[L(Y^0,\hat f(X^0))\mid {\cal T}]\tag{7.15}\label{7.15}
 </script>
 </p>
-<p>注意到在表达式 $\eqref{7.15}$ 中训练集 $\cal T$ 是固定的．点 $(X^0,Y^0)$ 是新的测试点，从数据的联合分布 $F$ 中取的．对数据集平均得到期望误差</p>
+<p>注意到在表达式 $\eqref{7.15}$ 中训练集 $\cal T$ 是固定的．点 $(X^0,Y^0)$ 是新的测试点，从数据的联合分布 $F$ 中取的．对数据集平均得到 <strong>期望误差 (expected error)</strong></p>
 <p>
 <script type="math/tex; mode=display">
 \mathrm{Err} = \mathrm E_{\cal T}\mathrm E_{X^0,Y^0}[L(Y^0,\hat f(X^0))\mid {\cal T}]\tag{7.16}\label{7.16}
@@ -3276,27 +3239,27 @@
 <p class="admonition-title">weiya 注：</p>
 <p>这里原文为 $\E_{\cal T}$，但结合上下文此处应为 $\Err_{\cal T}$.</p>
 </div>
-<p>现在一般地，训练误差</p>
+<p>现在一般地，<strong>训练误差 (training error)</strong></p>
 <p>
 <script type="math/tex; mode=display">
 \overline{\err} = \frac{1}{N}\sum\limits_{i=1}^NL(y_i,\hat f(x_i))\tag{7.17}\label{7.17}
 </script>
 </p>
-<p>会比真实误差 $\Err_{\cal T}$ 小，因为数据被同时用来拟合方法并且评估误差（见<a href="https://github.com/szcf-weiya/ESL-CN/issues/176">练习 2.9</a>）．拟合方法一般适应于训练数据，因此训练误差 $\overline{\err}$ 是对泛化误差 $\mathrm {Err}_{\cal T}$过度的乐观估计．</p>
+<p>会比真实误差 $\Err_{\cal T}$ 小，因为数据被同时用来拟合方法并且评估误差（见<a href="https://github.com/szcf-weiya/ESL-CN/issues/176">练习 2.9</a>）．拟合方法一般适应于训练数据，因此 <strong>表面误差 (apparent error)</strong> 或训练误差 $\overline{\err}$ 是对泛化误差 $\mathrm {Err}_{\cal T}$过度的乐观估计．</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注：Ex. 2.9</p>
 <p>已解决，详见 <a href="https://github.com/szcf-weiya/ESL-CN/issues/176">Issue 176: Ex. 2.9</a>.</p>
 </div>
-<p>部分差异是因为取值点的选取．值 $\Err_{\cal T}$ 可以看成是 <strong>样本外 (extra-sample)</strong> 误差，因为测试输入向量不需要与训练输入向量一致．当我们去关注 <strong>样本内 (in-sample)</strong> 误差，可以很简单地理解 $\overline{\err}$ 乐观估计的本质</p>
+<p>部分差异是因为取值点的选取．值 $\Err_{\cal T}$ 可以看成是 <strong>样本外误差 (extra-sample error)</strong>，因为测试输入向量不需要与训练输入向量一致．当我们去关注 <strong>样本内误差 (in-sample error)</strong>，可以很简单地理解 $\overline{\err}$ 乐观估计的本质</p>
 <p>
 <script type="math/tex; mode=display">
-\Err_{in}=\frac{1}{N}\sum\limits_{i=1}^N\mathrm E_{Y^0}[L(Y_i^0,\hat f(x_i))\mid {\cal T}]\tag{7.18}\label{7.18}
+\Err_{\text{in}}=\frac{1}{N}\sum_{i=1}^N\mathrm E_{Y^0}[L(Y_i^0,\hat f(x_i))\mid {\cal T}]\tag{7.18}\label{7.18}
 </script>
 </p>
-<p>$Y^0$ 表示我们在每个训练点 $x_i,i=1,2,\ldots,N$ 处观测 $N$ 个新响应变量的值．我们定义 $\Err_{in}$ 与训练误差 $\overline{\err}$ 的差为 <strong>乐观 (optimism)</strong>：</p>
+<p>$Y^0$ 表示我们在每个训练点 $x_i,i=1,2,\ldots,N$ 处观测 $N$ 个新响应变量的值．我们定义 $\Err_{\text{in}}$ 与训练误差 $\overline{\err}$ 的差为 <strong>乐观偏差 (optimism)</strong>：</p>
 <p>
 <script type="math/tex; mode=display">
-\mathrm {op}\equiv \mathrm{Err}_{in}-\overline{\err}\tag{7.19}\label{7.19}
+\mathrm {op}\equiv \mathrm{Err}_{\text{in}}-\overline{\err}\tag{7.19}\label{7.19}
 </script>
 </p>
 <p>一般情形下这是正的，因为 $\overline{\err}$ 经常是预测误差的向下有偏估计．最终，平均乐观是乐观在训练集上的期望</p>
@@ -3309,7 +3272,7 @@
 <p>对于平方误差，0-1，以及其他损失函数，可以证明一般性的结论</p>
 <p>
 <script type="math/tex; mode=display">
-\omega=\frac{2}{N}\sum\limits_{i=1}^NCov(\hat y_i,y_i)\tag{7.21}\label{7.21}
+\omega=\frac{2}{N}\sum\limits_{i=1}^N\Cov(\hat y_i,y_i)\tag{7.21}\label{7.21}
 </script>
 </p>
 <p>其中 $\Cov$ 表示协方差．因此 $\overline{\err}$ 低估真实误差的程度取决于 $y_i$ 影响它本身估计的程度．数据越难拟合，$\Cov(\hat y_i,y_i)$ 将越大，因此增大了乐观．<a href="https://github.com/szcf-weiya/ESL-CN/issues/27">练习 7.4</a> 证明了平方损失函数时的结果，其中 $\hat y_i$ 为根据回归拟合好的值．对于 0-1 损失，$\hat y_i\in\{0,1\}$ 是在 $x_i$ 处的分类，另外对于熵损失，$\hat y_i\in[0,1]$ 是在 $x_i$ 处类别 1 的拟合概率．</p>
@@ -3320,7 +3283,7 @@
 <p>总结一下，我们有重要的关系式</p>
 <p>
 <script type="math/tex; mode=display">
-\E_{\mathbf y}(\Err_{in})=\E_{\mathbf y}(\overline{\err})+\frac{2}{N}\sum\limits_{i=1}^N\Cov(\hat y_i,y_i)\tag{7.22}\label{7.22}
+\E_{\mathbf y}(\Err_{\text{in}})=\E_{\mathbf y}(\overline{\err})+\frac{2}{N}\sum\limits_{i=1}^N\Cov(\hat y_i,y_i)\tag{7.22}\label{7.22}
 </script>
 </p>
 <p>如果 $\hat y_i$ 通过含 $d$ 个输入或者基函数的线性拟合得到，上面表达式可以简化．例如，对于可加误差模型 $Y=f(X)+\varepsilon$，</p>
@@ -3332,7 +3295,7 @@
 <p>因此</p>
 <p>
 <script type="math/tex; mode=display">
-\E_{\mathbf y}(\Err_{in})=\E_{\mathbf y}(\overline{\err})+2\cdot\frac{d}{N}\sigma_\varepsilon^2\tag{7.24}\label{7.24}
+\E_{\mathbf y}(\Err_{\text{in}})=\E_{\mathbf y}(\overline{\err})+2\cdot\frac{d}{N}\sigma_\varepsilon^2\tag{7.24}\label{7.24}
 </script>
 </p>
 <div class="admonition note">
@@ -3340,27 +3303,57 @@
 <p><a href="https://github.com/szcf-weiya/ESL-CN/issues/27">Issue 27: Ex. 7.4</a> 的解答中也给出了 \eqref{7.24} 的推导。</p>
 </div>
 <p>表达式 $\eqref{7.23}$ 是将在 <a href="../7.6-The-Effective-Number-of-Parameters/index.html">7.6 节</a>讨论的 <strong>有效参数个数 (effective number of parameters)</strong> 定义的基础．optimism 随着我们使用的输入或基函数的个数 $d$ 线性增长，但是当训练样本大小增大时会降低．$\eqref{7.24}$ 的其它版本对其它误差模型也近似成立，比如二值数据和熵损失．</p>
-<p>估计预测误差的一种明显方法是先估计 optimism 然后加到训练误差 $\overline{\err}$ 上．下一节将要描述的方法—— $C_p$，AIC，BIC 以及其它方法——对于估计关于参数是线性的特殊估计类，都是通过这种方式实现．</p>
+<p>估计预测误差的一种明显方法是先估计 optimism 然后加到训练误差 $\overline{\err}$ 上．下一节将要描述的方法—$C_p$，AIC，BIC 以及其它方法—对于估计关于参数是线性的特殊估计类，都是通过这种方式实现．</p>
 <p>相反地，将在本章后面描述的交叉验证以及自助法是对 <strong>样本外 (extra-sample)</strong> 误差 $\Err$ 直接估计的方法．这些一般工具可以用于任意损失函数以及非线性自适应拟合技巧．</p>
 <p>样本内误差通常不是直接感兴趣的，因为特征的未来值不可能与它们训练集值一致．但是为了模型之间的比较，样本内误差是很方便的，并且经常能够有效地进行模型选择．原因在于误差的相对（而不是绝对）大小是我们所关心的．</p>
+<div class="admonition info">
+<p class="admonition-title">weiya 注：</p>
+<p>本节相似内容另见 Efron, B., &amp; Hastie, T. (2016). Computer Age Statistical Inference. Cambridge University Press, 493. 一书中第 12.3 节。</p>
+</div>
                 
                   
                 
               
               
                 
-                  <h2 id="__comments">Comments</h2>
-                  <div id="comment"></div>
-<script>
-    var disq = new iDisqus('comment', {
-    forum: 'esl-hohoweiya-xyz',
-    api: 'https://api.hohoweiya.xyz/disqus-190507',
-    site: 'https://esl.hohoweiya.xyz',
-    mode: 1,
-    timeout: 3000,
-    init: true
-});
+                  <h2 id="__comments">💬 讨论区</h2>
+                  <script src="https://giscus.app/client.js"
+        data-repo="szcf-weiya/ESL-CN"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk2OTYyNTgzOA=="
+        data-category="评论区"
+        data-category-id="DIC_kwDOBCZn7s4ChHU6"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
 </script>
+
+
+<div id="disqus_thread"></div>
+<script>
+  if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+    var disqus_config = function () {
+      this.page.url = "https://esl.hohoweiya.xyz/07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate/index.html";
+      this.page.identifier =
+        "/07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate/index.html";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//esl-hohoweiya-xyz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  } else {
+    console.log("Disqus is disabled on localhost.");
+  }
+</script>
+
+
                 
               
             </article>
@@ -3411,7 +3404,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016-2019 weiya
+            Copyright &copy; 2016-2025 weiya
           </div>
         
         <!--
@@ -3421,7 +3414,7 @@
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2019-11-18 15:50:23
+        Last Build Date UTC : 2025-09-13 07:56:24
       </div>
       
         
@@ -3434,7 +3427,7 @@
     
       <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://stats.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
     
       <a href="https://www.linkedin.com/in/szcfweiya/" class="md-footer-social__link fa fa-linkedin"></a>
     
@@ -3454,18 +3447,57 @@
     <!--
       
     -->
-	    <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+	    <script>app.initialize({version:"0.17.2+weiyapatch1",url:{base:"../.."}})</script>
 	          <!---->
 
     <script>var base_url = '../..';</script>
     <!--
       
     -->
+    <script src="../../js/baiduzhanzhang.js"></script>
     
     
       
         <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-85046550-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
+    <!--adjust disqus recommendation width (possibly occupied by ads)-->
+    <script>
+// 确保在 DOM 完全加载后执行
+document.addEventListener('DOMContentLoaded', function() {
+    // 定义修复宽度的函数
+    function fixDisqusWidth() {
+        const iframe = document.querySelector('#disqus_recommendations iframe');
+        if (iframe) {
+            iframe.style.cssText += 'width: 100% !important; max-width: 100% !important;';
+        }
+    }
+
+    // 初次尝试修复
+    fixDisqusWidth();
+
+    // 监听 Disqus 容器的动态加载
+    const observer = new MutationObserver(function(mutations) {
+        fixDisqusWidth();
+    });
+
+    // 获取 Disqus 容器
+    const targetNode = document.getElementById('disqus_recommendations');
+    if (targetNode) {
+        // 如果容器已存在，直接监听
+        observer.observe(targetNode, { childList: true, subtree: true });
+    } else {
+        // 如果容器未加载，监听整个文档直到其出现
+        const docObserver = new MutationObserver(function(mutations) {
+            const lateTarget = document.getElementById('disqus_recommendations');
+            if (lateTarget) {
+                observer.observe(lateTarget, { childList: true, subtree: true });
+                docObserver.disconnect();
+            }
+        });
+        docObserver.observe(document.body, { childList: true, subtree: true });
+    }
+});
+    </script>
   </body>
 </html>

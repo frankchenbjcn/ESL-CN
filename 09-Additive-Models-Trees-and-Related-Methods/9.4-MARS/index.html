@@ -42,11 +42,11 @@
 	-->
       <link rel="shortcut icon" href="../../img/favicon.ico">
 
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.0">
+      <meta name="generator" content="mkdocs-0.17.2+weiyapatch1, mkdocs-material-2.6.0">
     
     
       
-        <title>9.4 多变量自适应回归样条 - ESL CN</title>
+        <title>9.4 多元自适应回归样条 - ESL CN</title>
       
     
     
@@ -59,16 +59,41 @@
       <script src="../../assets/javascripts/modernizr.js"></script>
     
     
+          <!--rm disqus ad refer to https://www.javaer101.com/article/25891160.html-->
+          <script src="../../assets/javascripts/jquery-latest.min.js"></script>
+          <script>
+            (function($){
+              setInterval(() => {
+                  $.each($('iframe'), (arr,x) => {
+                      let src = $(x).attr('src');
+                      if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
+                          $(x).remove();
+                      }
+                      let title = $(x).attr('title');
+                      if (!src && title == "Disqus") {
+                        $(x).remove();
+                      }
+                  });
+              }, 300);
+          })(jQuery);
+          </script>   
+    
+    
       
-        <script src="../../js/iDisqus190507.min.js"></script>
       
     
     
       
-      <!--
-      <style>body,input{font-family:"lucida grande", "lucida sans unicode", lucida, 'Open Sans', helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
-      -->
-      <style>body,input{font-family:Optima, Segoe, “Segoe UI”, Calibri, Arial,source-han-serif-sc,'Source Han Serif SC','Source Han Serif CN','Source Han Serif TC','Source Han Serif TW','Source Han Serif','Songti SC','Microsoft YaHei',sans-serif}code,kbd,pre{font-family: Consolas, monospace;}blockquote{font-family: 'Palatino Linotype','Book Antiqua',Palatino,STKaiti,KaiTi,'楷体',SimKai,DFKai-SB,NSimSun,serif;}</style>
+      <style>
+      body, input {
+        font-family: Optima, Segoe, “Segoe UI”, Calibri, Arial, 'Source Han Serif SC', 'Source Han Serif', 'Songti SC', 'Microsoft YaHei', sans-serif;
+        }
+      code, kbd, pre {
+        font-family: Consolas, "Courier New", monospace;
+        }
+      blockquote {
+        font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, STKaiti, KaiTi, '楷体', SimKai, "DFKai-SB", NSimSun, serif;}
+      </style>
       <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
       <link rel="stylesheet" href="../../css/icon.css">
       <link rel="stylesheet" href="../../css/mini-awesome/font-awesome.css">
@@ -76,18 +101,18 @@
     
       <link rel="stylesheet" href="../../css/misc.css">
     
-      <link rel="stylesheet" href="../../css/iDisqus190507.min.css">
-    
     
     <script src="../../js/mathjax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3680148472128768",
-    enable_page_level_ads: true
-  });
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KDYJ30F81"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3KDYJ30F81');
+    </script>
   </head>
   
     
@@ -98,24 +123,7 @@
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
+          <svg xmlns="http://www.w3.org/2000/svg" id="github" width="416" height="448" viewBox="0 0 416 448"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360 304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25 2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75 1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75 0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5 46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
@@ -155,7 +163,7 @@
                 ESL CN
               </span>
               <span class="md-header-nav__topic">
-                9.4 多变量自适应回归样条
+                9.4 多元自适应回归样条
               </span>
             
           
@@ -165,35 +173,11 @@
         <!--
         
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
-
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          
         
         -->
+        <!-- <div style="padding-top:0.4rem;padding-bottom:0.4rem;width:15rem;height:4rem;">
+          <iframe src="https://github.com/sponsors/szcf-weiya/button" title="Sponsor szcf-weiya" height="100%" width="100%" style="display:block;margin:auto;border:0;"></iframe>
+        </div> -->
       </div>
       
         <div class="md-flex__cell md-flex__cell--shrink">
@@ -204,7 +188,7 @@
   
 
 
-  <a href="https://github.com/szcf-weiya/ESL-CN" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/szcf-weiya/ESL-CN/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -259,7 +243,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../01-Introduction/2016-07-26-Chapter-1-Introduction/index.html" title="上篇" class="md-tabs__link">
+        <a href="../../01-Introduction/1.1-Introduction/index.html" title="上篇" class="md-tabs__link">
           上篇
         </a>
       
@@ -326,6 +310,19 @@
   
 
       
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tag/index.html" title="索引" class="md-tabs__link">
+          索引
+        </a>
+      
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -354,7 +351,7 @@
   
 
 
-  <a href="https://github.com/szcf-weiya/ESL-CN" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/szcf-weiya/ESL-CN/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -499,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../01-Introduction/2016-07-26-Chapter-1-Introduction/index.html" title="1.1 导言" class="md-nav__link">
+    <a href="../../01-Introduction/1.1-Introduction/index.html" title="1.1 导言" class="md-nav__link">
       1.1 导言
     </a>
   </li>
@@ -1293,8 +1290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate/index.html" title="7.4 测试误差率的 optimism" class="md-nav__link">
-      7.4 测试误差率的 optimism
+    <a href="../../07-Model-Assessment-and-Selection/7.4-Optimism-of-the-Training-Error-Rate/index.html" title="7.4 测试误差率的乐观偏差" class="md-nav__link">
+      7.4 测试误差率的乐观偏差
     </a>
   </li>
 
@@ -1640,11 +1637,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        9.4 多变量自适应回归样条
+        9.4 多元自适应回归样条
       </label>
     
-    <a href="index.html" title="9.4 多变量自适应回归样条" class="md-nav__link md-nav__link--active">
-      9.4 多变量自适应回归样条
+    <a href="index.html" title="9.4 多元自适应回归样条" class="md-nav__link md-nav__link--active">
+      9.4 多元自适应回归样条
     </a>
     
       
@@ -1735,8 +1732,8 @@
       
       
         <li class="md-nav__item">
-          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
-            Comments
+          <a href="#__comments" title="💬 讨论区" class="md-nav__link md-nav__link--active">
+            💬 讨论区
           </a>
         </li>
       
@@ -1825,8 +1822,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html" title="10.1 boosting 方法" class="md-nav__link">
-      10.1 boosting 方法
+    <a href="../../10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html" title="10.1 Boosting 方法" class="md-nav__link">
+      10.1 Boosting 方法
     </a>
   </li>
 
@@ -1837,8 +1834,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model/index.html" title="10.2 boosting 拟合可加模型" class="md-nav__link">
-      10.2 boosting 拟合可加模型
+    <a href="../../10-Boosting-and-Additive-Trees/10.2-Boosting-Fits-an-Additive-Model/index.html" title="10.2 Boosting 拟合可加模型" class="md-nav__link">
+      10.2 Boosting 拟合可加模型
     </a>
   </li>
 
@@ -1921,8 +1918,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.9-Boosting-Trees/index.html" title="10.9 boosting 树" class="md-nav__link">
-      10.9 boosting 树
+    <a href="../../10-Boosting-and-Additive-Trees/10.9-Boosting-Trees/index.html" title="10.9 Boosting 树" class="md-nav__link">
+      10.9 Boosting 树
     </a>
   </li>
 
@@ -1933,8 +1930,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting/index.html" title="10.10 Gradient Boosting 的数值优化" class="md-nav__link">
-      10.10 Gradient Boosting 的数值优化
+    <a href="../../10-Boosting-and-Additive-Trees/10.10-Numerical-Optimization-via-Gradient-Boosting/index.html" title="10.10 基于梯度提升的数值优化" class="md-nav__link">
+      10.10 基于梯度提升的数值优化
     </a>
   </li>
 
@@ -2197,8 +2194,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html" title="12.5 FDA" class="md-nav__link">
-      12.5 FDA
+    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html" title="12.5 灵活判别分析" class="md-nav__link">
+      12.5 灵活判别分析
     </a>
   </li>
 
@@ -2209,8 +2206,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis/index.html" title="12.6 PDA" class="md-nav__link">
-      12.6 PDA
+    <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.6-Penalized-Discriminant-Analysis/index.html" title="12.6 惩罚判别分析" class="md-nav__link">
+      12.6 惩罚判别分析
     </a>
   </li>
 
@@ -2449,8 +2446,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces/index.html" title="14.5 主成分，主曲线以及主曲面" class="md-nav__link">
-      14.5 主成分，主曲线以及主曲面
+    <a href="../../14-Unsupervised-Learning/14.5-Principal-Components-Curves-and-Surfaces/index.html" title="14.5 主成分、主曲线与主曲面" class="md-nav__link">
+      14.5 主成分、主曲线与主曲面
     </a>
   </li>
 
@@ -2962,59 +2959,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
     
     <label class="md-nav__link" for="nav-5-2">
-      习题解答
+      实验重现
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-5-2">
-        习题解答
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../notes/manual/index.html" title="索引" class="md-nav__link">
-      索引
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../notes/Graph/ex-17-7/index.html" title="习题 Ex. 17.7" class="md-nav__link">
-      习题 Ex. 17.7
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
-    
-    <label class="md-nav__link" for="nav-5-3">
-      模拟实验
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-3">
-        模拟实验
+        实验重现
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -3133,18 +3082,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../notes/HighDim/sim18_1/index.html" title="模拟 Fig. 18.1" class="md-nav__link">
-      模拟 Fig. 18.1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../notes/boosting/sim-eq-10-2/index.html" title="模拟 Eq. 10.2" class="md-nav__link">
       模拟 Eq. 10.2
     </a>
@@ -3175,30 +3112,6 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
-    
-    <label class="md-nav__link" for="nav-5-4">
-      算法实现
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-4">
-        算法实现
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
@@ -3223,13 +3136,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
     
-    <label class="md-nav__link" for="nav-5-5">
+    <label class="md-nav__link" for="nav-5-3">
       比较总结
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-5">
+      <label class="md-nav__title" for="nav-5-3">
         比较总结
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -3295,8 +3208,56 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/BS/bs/index.html" title="B 样条在 R, Python, Cpp 中的实现" class="md-nav__link">
+      B 样条在 R, Python, Cpp 中的实现
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      索引
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        索引
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tag/index.html" title="关键词" class="md-nav__link">
+      关键词
+    </a>
   </li>
 
         
@@ -3403,8 +3364,8 @@
       
       
         <li class="md-nav__item">
-          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
-            Comments
+          <a href="#__comments" title="💬 讨论区" class="md-nav__link md-nav__link--active">
+            💬 讨论区
           </a>
         </li>
       
@@ -3420,13 +3381,15 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/szcf-weiya/ESL-CN/edit/master/docs/09-Additive-Models-Trees-and-Related-Methods/9.4-MARS.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                <h1 id="94-mars">9.4 MARS: 多变量自适应回归样条<a class="headerlink" href="#94-mars" title="Permanent link">&para;</a></h1>
+                
+                <h1 id="94-mars">9.4 MARS: 多元自适应回归样条<a class="headerlink" href="#94-mars" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
 <th>原文</th>
-<th><a href="../../book/The Elements of Statistical Learning.pdf#page=340">The Elements of Statistical Learning</a></th>
+<th><a href="https://esl.hohoweiya.xyz/book/The%20Elements%20of%20Statistical%20Learning.pdf#page=340">The Elements of Statistical Learning</a></th>
 </tr>
 </thead>
 <tbody>
@@ -3435,16 +3398,12 @@
 <td>szcf-weiya</td>
 </tr>
 <tr>
-<td>时间</td>
-<td>2017-03-13</td>
+<td>发布</td>
+<td>2017-03-14</td>
 </tr>
 <tr>
 <td>更新</td>
-<td>2019-05-10 23:14:29</td>
-</tr>
-<tr>
-<td>状态</td>
-<td>Done</td>
+<td>2025-04-29</td>
 </tr>
 </tbody>
 </table>
@@ -3455,7 +3414,11 @@
 <p>第三次是在处理 soda 项目的时候，用到 MARS，以及与其它方法的对比，跟 Professor Liu 的 soda 还真是有异曲同工之妙．</p>
 <p>今天更新 MARS 这一章节算是第四次与 MARS 的正式重逢吧．@2017.08.25</p>
 </blockquote>
-<p>MARS 是回归的自适应过程，非常适合高维问题（比如，存在大量的输入）．可以从两个角度来理解它，首先，它可以看成是逐步线性回归的推广，其次，也可以看成是为了提高 CART 在回归中的效果而进行的改进．我们从第一种观点引入 MARS，接着与 CART 联系起来．</p>
+<div class="admonition info">
+<p class="admonition-title">weiya 注：benchmarking</p>
+<p>在可复现性驱动的回归算法评估项目 <a href="https://hohoweiya.xyz/benchmark.tree.regressions/">szcf-weiya/benchmark.tree.regressions</a> 中，我们基于 ShinyApp + Shinylive 构建了交互式对比平台，支持对 BART, MARS, RandomForest, XGBoost 等多种主流树模型在各种模拟数据集以及实际数据集上表现的可视化比较。</p>
+</div>
+<p><strong>多元自适应回归样条 (Multivariate Adaptive Regression Splines, MARS)</strong> 是回归的自适应过程，非常适合高维问题（即，存在大量的输入）．可以从两个角度来理解它，首先，它可以看成是逐步线性回归的推广，其次，也可以看成是为了提高 CART 在回归中的效果而进行的改进．我们从第一种观点引入 MARS，接着与 CART 联系起来．</p>
 <p>MARS 采用形式为 $(x-t)_+, (t-x)_+$ 的分段线性基函数的展开．“+”表示正的部分，所以</p>
 <p>
 <script type="math/tex; mode=display">
@@ -3479,7 +3442,7 @@ t-x& \text{if }x<t\\
 <blockquote>
 <p>图 9.9. MARS 采用的基函数 $(x-t)_+$（实心橘黄色）和 $(t-x)_+$（蓝色虚线）</p>
 </blockquote>
-<p>每个函数是分段线性的，在值 $t$ 处有一个结点．用第五章的术语说它们是线性样条．在下面的讨论中我们将这两个函数称为 <strong>反射对 (reflected pair)</strong>．想法是，对于每个输入变量 $X_j$，将该输入变量的所有观测值作为结点．因此，基函数集合为</p>
+<p>每个函数是分段线性的，在值 $t$ 处有一个 <strong>结点 (knot)</strong>．用<a href="../../05-Basis-Expansions-and-Regularization/5.1-Introduction/index.html">第五章</a>的术语说它们是线性样条．在下面的讨论中我们将这两个函数称为 <strong>反射对 (reflected pair)</strong>．想法是，对于每个输入变量 $X_j$，将该输入变量的所有观测值作为结点．因此，基函数集合为</p>
 <p>
 <script type="math/tex; mode=display">
 {\cal C}=\{(X_j-t)_+,(t-X_j)_+\}_{t\in\{x_{1j},x_{2j},\ldots,x_{Nj}\},j=1,2,\ldots,p}\tag{9.18}
@@ -3531,22 +3494,25 @@ h_2(X)&=(x_{72}-X_2)_+
 \GCV(\lambda)=\frac{\sum_{i=1}^N(y_i-\hat f_\lambda(x_i))^2}{(1-M(\lambda)/N)^2}\tag{9.20}
 </script>
 $M(\lambda)$ 是模型中有效参数的个数：它等于模型中项的个数，加上在选择最优结点位置的参数个数．</p>
+<p>一些理论的证明和实际的拟合结果表明在分段线性回归中每选择一个结点，应当增加三个有效参数．所以，如果模型中含有 $r$ 个线性独立基函数，并且在向前过程中选择 $K$ 个结点，则有 $M(\lambda)=r+cK$，其中 $c=3$．（当模型限定为加性时，$c=2$）．在向后删除变量的过程中，计算 $\GCV(\lambda)$，选择使得 $\GCV(\lambda)$ 最小的模型．</p>
 <div class="admonition note">
-<p class="admonition-title">weiya 注</p>
-<p>7.10 节中也有广义交叉验证的讨论．在那里，是针对平方误差损失下的线性拟合而言的．线性拟合方法可以写成
-<script type="math/tex; mode=display">
-\mathbf{\hat y=Sy}\tag{7.50}
-</script>
-</p>
-</div>
-<p>GCV 近似为</p>
+<p class="admonition-title">weiya 注：$M(\lambda)=r+cK$?</p>
+<p><a href="http://disq.us/p/1ne2w82">@Xiaolin So</a> 和 <a href="http://disq.us/p/27pn018">@yvlian</a> 在评论中讨论这个复杂度公式，由于理解不够透彻，有些回复可能有偏差，特此查阅<a href="https://projecteuclid.org/euclid.aos/1176347963">MARS 原文</a>试图在这里解释清楚. </p>
+<blockquote>
+<p>Only the coefficients $(a_0, \ldots, a_M)$ (对应这里的 $(\beta_0,\ldots,\beta_M)$), the complexity cost function is</p>
 <p>
 <script type="math/tex; mode=display">
-\GCV(\hat f)=\frac{1}{N}\sum\limits_{i=1}^N[\frac{y_i-\hat f(x_i)}{1-trace(\mathbf S)/N}]^2\tag{7.52}
+C(M) = \trace(\B(\B^T\B)^{-1}\B^T) + 1\,,
 </script>
-</p>
-<p>$\trace(\mathbf S)$ 的值是有效参数个数．</p>
-<p>一些理论的证明和实际的拟合结果表明在分段线性回归中每选择一个结点，应当增加三个有效参数．所以，如果模型中含有 $r$ 个线性独立基函数，并且在向前过程中选择 $K$ 个结点，则有 $M(\lambda)=r+cK$，其中 $c=3$．（当模型限定为加性时，$c=2$）．在向后删除变量的过程中，计算 $\GCV(\lambda)$，选择使得 $\GCV(\lambda)$ 最小的模型．</p>
+where $\B$ is the $M\times N$ data matrix of the $M$ (nonconstant) basis functions, $B_{ij} = B_i(\x_j)$. <strong>This is equal to the number of linearly independent basis functions.</strong>（这对应 <a href="../../07-Model-Assessment-and-Selection/7.10-Cross-Validation/index.html">7.10 节</a> 中对 GCV 的近似 $\trace(\mathbf S)$, 其中 $\S$ 是线性算子）But with an increased cost complexity function $\tilde C(M)$ to reflect the additional (basis function) parameters that, </p>
+<p>
+<script type="math/tex; mode=display">
+\tilde C(M) = C(M) + d\cdot M
+</script>
+where $M$ is the number of nonconstant basis functions and $d$ represents a cost for each basis function optimization.</p>
+</blockquote>
+<p>对比一下，不难发现，这里的 $c$ 其实就是 $d$，$r$ 为 $C(M)$，且 $\lambda$ 即为原文的 $M$. 但还是有一点区别, 原文是说每个<strong>基函数</strong>需要 $d$ 个单位的 cost，但是这里是说每个<strong>结点</strong>需要 $c$ 个单位的 cost，当只考虑一阶的情况，结点数和基函数个数是相等的，但是如果考虑高阶，这两个似乎并不等价？还是我漏掉了什么？</p>
+</div>
 <p>为什么是这些分段线性函数，为什么是这个特定的模型策略？图 9.9 中函数的关键性质是它可以局部计算；在它们的定义域中有一部分为 0．当它们乘起来，如图 9.11，非零的结果仅仅占特征空间的一小部分，当函数的公共部分为非零．这样便可以非常简约地建立起回归曲面（如图 9.11），只需要采用局部非零的部分．这是很重要的，因为在高维问题中应该小心地使用参数，因为它们很快就会用光．其它比如多项式的基函数会在任意地方产生非零乘积，而很多非零乘积也不会起作用（相当于浪费了参数）．</p>
 <p>这种分段线性基函数的第二个重要优点是计算上的．考虑 $\cal M$ 中的函数和输入变量 $X_j$ 的 $N$ 个反射对的乘积．似乎需要拟合 $N$ 个单输入的线性回归模型，每个需要 $O(N)$ 的操作，总共需要 $O(N^2)$ 的操作．然而，我们利用分段线性函数的简单形式的特点，首先用最右端结点的反射对．当这个结点每次依次向左移动一个位置，基函数在结点左边的值为 0，在右边部分值为常数．每次移动后会以 $O(1)$ 的操作更新拟合值．所以我们仅仅需要 $O(N)$ 的操作来遍历每个结点．</p>
 <div class="admonition note">
@@ -3629,13 +3595,13 @@ R^2=\frac{\MSE_0-\MSE}{\MSE_0}\tag{9.24}
 <h2 id="_3">其他的问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="mars">MARS 用于分类<a class="headerlink" href="#mars" title="Permanent link">&para;</a></h3>
 <p>MARS 方法和算法可以拓展到处理分类问题．已经提出了几种策略．</p>
-<p>对于两个类别，可以将输出编码为0/1，并且将其看成是回归问题；我们在 spam 例子中已经这样做了．对于多余两个类别的情形，可以采用 <a href="../../04-Linear-Methods-for-Classification/4.2-Linear-Regression-of-an-Indicator-Matrix/index.html">4.2 节</a>描述的指示响应变量的方法．用 0/1 来编码 $K$ 个响应类别，接着采用多重响应的 MARS 回归．对于后者我们对所有的响应变量采用共同的基函数集合．分类使得类别有最大的预测向量的值．然而，正如 4.2 中描述的那样，这种方法存在潜在的掩盖问题．一般更好的方式是在 <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html">12.5 节</a>讨论的 optimal scoring.</p>
+<p>对于两个类别，可以将输出编码为0/1，并且将其看成是回归问题；我们在 spam 例子中已经这样做了．对于多类别情形，可以采用 <a href="../../04-Linear-Methods-for-Classification/4.2-Linear-Regression-of-an-Indicator-Matrix/index.html">4.2 节</a>描述的指示响应变量的方法．用 0/1 来编码 $K$ 个响应类别，接着采用多重响应的 MARS 回归．对于后者我们对所有的响应变量采用共同的基函数集合．分类使得类别有最大的预测向量的值．然而，正如 4.2 中描述的那样，这种方法存在潜在的掩盖问题．一般更好的方式是在 <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.5-Flexible-Disciminant-Analysis/index.html">12.5 节</a>讨论的 optimal scoring.</p>
 <p>Stone et al. (1997)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 发展了 MARS 的混合版本 PolyMARS，是为了处理分类问题特别设计的．它采用在 <a href="../../04-Linear-Methods-for-Classification/4.4-Logistic-Regression/index.html">4.4 节</a>描述的多重逻辑斯蒂回归框架．以类似 MARS 的向前逐步方式来建立模型，但是在每一步多多变量对数似然作二次近似来寻找下一个基函数对．一旦找到，则通过极大似然扩大模型，并且这个过程重复进行．</p>
 <h3 id="mars-cart">MARS 和 CART 的关系<a class="headerlink" href="#mars-cart" title="Permanent link">&para;</a></h3>
 <p>尽管它们看起来相当不同，但是 MARS 和 CART 策略实际上有很强的相似性．假设我们进行了 MARS 过程，并且作出下面改变：</p>
 <ul>
 <li>用阶跃函数 $I(x-t&gt;0)$ 和 $I(x-t\le 0)$ 来替换分段线性基函数．</li>
-<li>当模型中的项与候选项相乘，用交叉性来代替，因此对于后续的交叉项不是可行的．</li>
+<li>当模型中的项与候选项相乘，替换成交叉项，因此不允许该项与其它候选项进行交叉．</li>
 </ul>
 <p>有了这些改变，MARS 向前过程与 CART 构造树的算法是一样的．乘上一对反射阶跃函数等价于在阶跃点分割开．第二条限制表明一个结点可能不会被分割成多次，因此使得 CART 模型能用（吸引人的）二叉树表示．另一方面，也是这条限制使得 CART 很难对加性结构进行建模．MARS 放弃树结构并且得到捕捉加性影响的能力．</p>
 <h3 id="_4">混合输入<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -3654,18 +3620,44 @@ R^2=\frac{\MSE_0-\MSE}{\MSE_0}\tag{9.24}
               
               
                 
-                  <h2 id="__comments">Comments</h2>
-                  <div id="comment"></div>
-<script>
-    var disq = new iDisqus('comment', {
-    forum: 'esl-hohoweiya-xyz',
-    api: 'https://api.hohoweiya.xyz/disqus-190507',
-    site: 'https://esl.hohoweiya.xyz',
-    mode: 1,
-    timeout: 3000,
-    init: true
-});
+                  <h2 id="__comments">💬 讨论区</h2>
+                  <script src="https://giscus.app/client.js"
+        data-repo="szcf-weiya/ESL-CN"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk2OTYyNTgzOA=="
+        data-category="评论区"
+        data-category-id="DIC_kwDOBCZn7s4ChHU6"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
 </script>
+
+
+<div id="disqus_thread"></div>
+<script>
+  if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+    var disqus_config = function () {
+      this.page.url = "https://esl.hohoweiya.xyz/09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html";
+      this.page.identifier =
+        "/09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//esl-hohoweiya-xyz.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  } else {
+    console.log("Disqus is disabled on localhost.");
+  }
+</script>
+
+
                 
               
             </article>
@@ -3716,7 +3708,7 @@ R^2=\frac{\MSE_0-\MSE}{\MSE_0}\tag{9.24}
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016-2019 weiya
+            Copyright &copy; 2016-2025 weiya
           </div>
         
         <!--
@@ -3726,7 +3718,7 @@ R^2=\frac{\MSE_0-\MSE}{\MSE_0}\tag{9.24}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2019-11-18 15:50:24
+        Last Build Date UTC : 2025-09-13 07:56:25
       </div>
       
         
@@ -3739,7 +3731,7 @@ R^2=\frac{\MSE_0-\MSE}{\MSE_0}\tag{9.24}
     
       <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://stats.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
     
       <a href="https://www.linkedin.com/in/szcfweiya/" class="md-footer-social__link fa fa-linkedin"></a>
     
@@ -3759,18 +3751,57 @@ R^2=\frac{\MSE_0-\MSE}{\MSE_0}\tag{9.24}
     <!--
       
     -->
-	    <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+	    <script>app.initialize({version:"0.17.2+weiyapatch1",url:{base:"../.."}})</script>
 	          <!---->
 
     <script>var base_url = '../..';</script>
     <!--
       
     -->
+    <script src="../../js/baiduzhanzhang.js"></script>
     
     
       
         <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-85046550-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
+    <!--adjust disqus recommendation width (possibly occupied by ads)-->
+    <script>
+// 确保在 DOM 完全加载后执行
+document.addEventListener('DOMContentLoaded', function() {
+    // 定义修复宽度的函数
+    function fixDisqusWidth() {
+        const iframe = document.querySelector('#disqus_recommendations iframe');
+        if (iframe) {
+            iframe.style.cssText += 'width: 100% !important; max-width: 100% !important;';
+        }
+    }
+
+    // 初次尝试修复
+    fixDisqusWidth();
+
+    // 监听 Disqus 容器的动态加载
+    const observer = new MutationObserver(function(mutations) {
+        fixDisqusWidth();
+    });
+
+    // 获取 Disqus 容器
+    const targetNode = document.getElementById('disqus_recommendations');
+    if (targetNode) {
+        // 如果容器已存在，直接监听
+        observer.observe(targetNode, { childList: true, subtree: true });
+    } else {
+        // 如果容器未加载，监听整个文档直到其出现
+        const docObserver = new MutationObserver(function(mutations) {
+            const lateTarget = document.getElementById('disqus_recommendations');
+            if (lateTarget) {
+                observer.observe(lateTarget, { childList: true, subtree: true });
+                docObserver.disconnect();
+            }
+        });
+        docObserver.observe(document.body, { childList: true, subtree: true });
+    }
+});
+    </script>
   </body>
 </html>
